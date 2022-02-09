@@ -31,3 +31,8 @@ export default function Home() {
 
 - index.ts -> /
 - about.js -> /about
+
+# 1.1 Pages (05:10)
+
+- Should export component with `default`
+- 404 is done
