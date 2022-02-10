@@ -146,3 +146,30 @@ touch pages/_app.tsx
 
 - globals.css -> Can import only in App component
   - (Normal tsx should import CSS Module)
+
+# 2.0 Patterns (06:45)
+
+## Layout
+
+- PropsWithChildren
+
+```tsx
+touch components/Layout.tsx
+
+export default function Layout({ children }: PropsWithChildren<{}>) {
+  return (
+    <>
+      <NavBar />
+      <div>{children}</div>
+    </>
+  );
+}
+```
+
+## Head
+
+- import `Head` from "next/head"
+
+```sh
+touch components/Seo.tsx
+```
