@@ -99,3 +99,28 @@ className={
 ```
 
 3. ???
+
+# 1.5 Styles JSX (06:56)
+
+- Use style jsx at the end of component
+- No need to use classname -> with just tag, it create randomized className
+- Can use manual className as well
+- It is not Cascade -> Only adjust to same component scope
+
+```tsx
+<div>
+  ...
+  <style jsx>{`
+    nav {
+      background-color: tomato;
+    }
+    a {
+      text-decoration: none;
+    }
+    .active {
+      color: yellow;
+    }
+  `}</style>
+</div>
+)}
+```
