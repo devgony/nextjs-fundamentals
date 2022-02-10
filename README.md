@@ -64,3 +64,38 @@ mkdir components
 touch components/NavBar.tsx
 touch pages/about.tsx
 ```
+
+# 1.4 CSS Modules (06:54)
+
+- Use CSS Module
+
+```sh
+touch components/NavBar.module.css
+```
+
+- Handle class name with styles.className
+
+```tsx
+import styles from "./NavBar.module.css";
+<a className={styles.className}></a>;
+```
+
+- Can use dupplicated class name -> nextjs randomize className!
+- How to use more then 2 css module
+
+1. template literal
+
+```tsx
+className={`${styles.link} ${router.pathname === "/" ? styles.active : ""}`}
+```
+
+2. join(" ")
+
+```tsx
+className={
+  [styles.link,
+   router.pathname === "/about" ? styles.active : ""
+  ].join(" ")}
+```
+
+3. ???
