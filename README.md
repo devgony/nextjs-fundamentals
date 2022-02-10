@@ -20,7 +20,7 @@ npm run dev
 
 ```sh
 rm -rf pages/*
-touch pages/index.ts
+touch pages/index.tsx
 
 export default function Home() {
   return "hi";
@@ -29,7 +29,7 @@ export default function Home() {
 
 ## File naming rule with route
 
-- index.ts -> /
+- index.tsx -> /
 - about.js -> /about
 
 # 1.1 Pages (05:10)
@@ -47,3 +47,20 @@ export default function Home() {
   - Even though disable JS, html stil exists
   - Pre-rendered with init state
   - Enable JS again -> Hydration: ReactJs takes over the init html
+
+# 1.3 Routing (08:04)
+
+- Should not use `<a>` tag -> reload
+- Use `Link` with `<a>`, style can be only with `<a>`
+
+```tsx
+<Link href="/">
+  <a style={{ color: router.pathname === "/" ? "red" : "blue" }}>Home</a>
+</Link>
+```
+
+```ts
+mkdir components
+touch components/NavBar.tsx
+touch pages/about.tsx
+```
