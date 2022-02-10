@@ -124,3 +124,25 @@ className={
 </div>
 )}
 ```
+
+# 1.6 Custom App (10:10)
+
+## Add global style -> just add `global`
+
+```tsx
+<style jsx global>
+```
+
+- But only works when those component is rendered -> Use App component
+
+## App component: blueprint of components
+
+- Can save dupplicated component like NavBar
+- Prefix with `_`: `_app.tsx`
+
+```sh
+touch pages/_app.tsx
+```
+
+- globals.css -> Can import only in App component
+  - (Normal tsx should import CSS Module)
