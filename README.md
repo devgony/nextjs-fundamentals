@@ -173,3 +173,21 @@ export default function Layout({ children }: PropsWithChildren<{}>) {
 ```sh
 touch components/Seo.tsx
 ```
+
+# 2.1 Fetching Data (11:35)
+
+## `components/NavBar.js`
+
+- Add logo -> Recommanded to use `Image` from `next/image`
+- All assets should be at `/public`
+- Add style jsx
+
+## `pages/index.js`
+
+- Fetch data with API
+- Render movie title
+- How to Hide API key?
+
+## `styles/globals.css`
+
+- Add max-width
