@@ -259,3 +259,7 @@ export async function getServerSideProps() {
 - Whatever putting here will be run on server
 - Can reduce first loading time, But may be able to slower for each next request
 - Initial html has all elements -> Good for SEO
+
+# 2.4 Recap (05:16)
+
+- NestJs puts all data in _NEXT_DATA_
