@@ -236,3 +236,26 @@ async rewrites() {
 ## `index.tsx`
 
 - Add movie-card styles
+
+# 2.3 Server Side Rendering (11:24)
+
+## `pages/index.js`
+
+### getServerSideProps
+
+```ts
+export async function getServerSideProps() {
+  const { results }: { results: [movie] } = await (
+    await fetch(`http://localhost:3000/api/movies`)
+  ).json();
+  return {
+    props: {
+      results,
+    },
+  };
+}
+```
+
+- Whatever putting here will be run on server
+- Can reduce first loading time, But may be able to slower for each next request
+- Initial html has all elements -> Good for SEO

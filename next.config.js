@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-
+// const API_KEY = "10923b261ba94d897ac6b81148314a3f";
 const API_KEY = process.env.API_KEY;
 
 const nextConfig = {
