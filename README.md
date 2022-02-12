@@ -191,3 +191,48 @@ touch components/Seo.tsx
 ## `styles/globals.css`
 
 - Add max-width
+
+# 2.2 Redirect and Rewrite (13:31)
+
+## Redirect
+
+- Use Pattern matching with `:path*`
+
+```ts
+async redirects() {
+    return [
+      {
+        source: "/old-blog/:path*",
+        destination: "/new-sexy-blog/:path*",
+        permanent: false,
+      },
+      {
+        source: "/src2/:path*",
+        destination: "/dest2/:path*",
+        permanent: false,
+      },
+    ];
+  },
+```
+
+## Rewrite
+
+- Instead of redirecting, GET data through proxy server
+- Can hide API_KEY
+
+```ts
+// touch .env
+const API_KEY = process.env.API_KEY
+async rewrites() {
+    return [
+      {
+        source: "/api/movies",
+        destination: `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`,
+      },
+    ];
+  },
+```
+
+## `index.tsx`
+
+- Add movie-card styles
