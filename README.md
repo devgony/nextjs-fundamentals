@@ -343,3 +343,9 @@ export async function getServerSideProps({
   };
 }
 ```
+
+# 2.8 404 Pages (02:06)
+
+```sh
+touch pages/404.tsx
+```
