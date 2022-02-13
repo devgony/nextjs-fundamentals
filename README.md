@@ -284,3 +284,29 @@ export async function getServerSideProps() {
 mkdir pages/movies
 touch "pages/movies/[id].tsx"
 ```
+
+# 2.6 Movie Detail (13:32)
+
+- `useRouter.push` instead of Link
+
+```ts
+router.push(`movies/${id}`);
+```
+
+- Add 2nd redirect at `next.conif.js`
+- Pass state with `query`
+- Mask query with `as`
+  - Can't use just directly use url
+  - User should follow proper step
+
+```ts
+router.push(
+  {
+    pathname: `/movies/${id}`,
+    query: {
+      title, // send state
+    },
+  },
+  `/movies/${id}` // mask
+);
+```
