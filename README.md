@@ -263,3 +263,24 @@ export async function getServerSideProps() {
 # 2.4 Recap (05:16)
 
 - NestJs puts all data in _NEXT_DATA_
+
+# 2.5 Dynamic Routes (07:02)
+
+1. movies
+
+- `pages/movies.tsx`
+
+2. movies and movies/all
+
+- `pages/movies/index.tsx` -> movies
+- `pages/movies/all.tsx` -> movies
+
+3. movies with params
+
+- `pages/movies/[id].tsx`
+- `useRouter().query.id`
+
+```sh
+mkdir pages/movies
+touch "pages/movies/[id].tsx"
+```
