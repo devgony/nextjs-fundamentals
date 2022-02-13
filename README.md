@@ -310,3 +310,36 @@ router.push(
   `/movies/${id}` // mask
 );
 ```
+
+# 2.7 Catch All (10:21)
+
+## If don't need to mask params
+
+1. Create file with name `[...variable].tsx`
+2. Send all params with `pathname` separated by `/`
+3. NextJs parses the pathname with `/` and gives into array
+
+## How to use?
+
+1. `useRouter().query`
+2. with `getServerSideProps`
+
+```ts
+export default function Detail({
+  params,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const [title, id] = params || [];
+}
+
+interface IParams extends ParsedUrlQuery {
+  params: [title: string, id: string];
+}
+
+export async function getServerSideProps({
+  params,
+}: GetServerSidePropsContext<IParams>) {
+  return {
+    props: { params: params?.params },
+  };
+}
+```
