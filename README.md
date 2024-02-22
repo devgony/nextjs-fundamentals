@@ -46,3 +46,28 @@ mkdir components
 touch app/not-found.tsx \
 components/navigation.tsx
 ```
+
+## 2.3 SSR vs CSR
+
+- In SSR, server renders html and gives browser full html
+- CSR gets empty html and browser will fill html with js later
+- usePathName works only with `use client`
+  - but even with `use client`, it is still SSR. it `also` works as `client`
+
+## 2.4 Hydration
+
+- after rendering html, hydrate events with js
+- clicking href is hijacked by js and virtually moves url
+
+```
+/about-us --> <button>0</button> --SSR-> user👀 --Hydartion-> onClick
+```
+
+## 2.5 'use client'
+
+- hydration only affects component with `use client`
+- strategy: write component first (as ServerComponent) and only when got below error, put `use client`
+
+```
+× You're importing a component that needs useState. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+```
