@@ -109,3 +109,29 @@ export default function RootLayout({
   );
 }
 ```
+
+## 2.8 Metadata
+
+```sh
+rm -rf app/about-us/company app/about-us/layout.tsx
+```
+
+- logical group `(groupName)` is not recognized as a page but just groups components logically
+
+```sh
+mkdir "app/(home)"
+mv app/page.tsx "app/(home)"
+```
+
+- `template` takes child and merge with format
+
+```ts
+// app/layout.tsx
+export const metadata: Metadata = {
+  title: {
+    template: "%s | Next Movies",
+    default: "Next Movies",
+  },
+  description: "The best movies on the best framework",
+};
+```
