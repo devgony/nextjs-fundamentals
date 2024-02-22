@@ -34,3 +34,15 @@ touch app/about-us/company/sales/page.tsx
 touch app/about-us/company/page.tsx
 touch app/about-us/page.tsx
 ```
+
+## 2.2 Not Found Routes
+
+- `app/not-found.tsx` handles global error
+
+```sh
+rm -rf app/about-us/company
+
+mkdir components
+touch app/not-found.tsx \
+components/navigation.tsx
+```
