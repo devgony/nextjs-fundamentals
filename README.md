@@ -246,3 +246,16 @@ components/movie-videos.tsx
   <MovieVideos id={id} />
 </Suspense>
 ```
+
+## 3.7 Error Handling
+
+- create error.text and it should be client component to recover from error
+
+```ts
+// touch "app/(movies)/movies/[id]/error.tsx"
+"use client";
+
+export default function ErrorOMG() {
+  return <h1>lol something broke....</h1>;
+}
+```
