@@ -213,3 +213,15 @@ export default async function HomePage() {
 ```sh
 touch app/(home)/loading.tsx
 ```
+
+## 3.4 Parallel Requests
+
+```sh
+touch "app/(movies)/movies/[id]/loading.tsx"
+```
+
+- Promise.all await parallel requests
+
+```ts
+const [movie, videos] = await Promise.all([getMovie(id), getVideos(id)]);
+```
