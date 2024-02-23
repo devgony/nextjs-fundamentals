@@ -154,3 +154,32 @@ export default function MovieDetail({
   return <h1>Movie {id}</h1>;
 }
 ```
+
+# 3 DATA FETCHING
+
+## 3.1 Client Side
+
+- review client side fetch
+
+```ts
+// app/(home)/page.tsx
+"use client";
+import { useEffect, useState } from "react";
+
+export default function Page() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [movies, setMovies] = useState([]);
+  const getMovies = async () => {
+    const response = await fetch(
+      "https://nomad-movies.nomadcoders.workers.dev/movies"
+    );
+    const json = await response.json();
+    setMovies(json);
+    setIsLoading(false);
+  };
+  useEffect(() => {
+    getMovies();
+  }, []);
+  return <div>{isLoading ? "Loading..." : JSON.stringify(movies)}</div>;
+}
+```
