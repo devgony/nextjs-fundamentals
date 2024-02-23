@@ -225,3 +225,24 @@ touch "app/(movies)/movies/[id]/loading.tsx"
 ```ts
 const [movie, videos] = await Promise.all([getMovie(id), getVideos(id)]);
 ```
+
+## 3.5 Suspense
+
+- extract each fetchings to components
+- Suspend will indivisually
+  - show loading
+  - re-render if children fetch data
+
+```sh
+touch components/movie-info.tsx \
+components/movie-videos.tsx
+```
+
+```ts
+<Suspense fallback={<h1>Loading movie info</h1>}>
+  <MovieInfo id={id} />
+</Suspense>
+<Suspense fallback={<h1>Loading movie videos</h1>}>
+  <MovieVideos id={id} />
+</Suspense>
+```
