@@ -135,3 +135,22 @@ export const metadata: Metadata = {
   description: "The best movies on the best framework",
 };
 ```
+
+## 2.9 Dynamic Routes
+
+- SSR gives params as default
+
+```sh
+mkdir -p "app/(movies)/movies/[id]"
+touch "app/(movies)/movies/[id]/page.tsx"
+```
+
+```ts
+export default function MovieDetail({
+  params: { id },
+}: {
+  params: { id: string };
+}) {
+  return <h1>Movie {id}</h1>;
+}
+```
