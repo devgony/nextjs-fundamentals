@@ -205,3 +205,11 @@ export default async function HomePage() {
   return <div>{JSON.stringify(movies)}</div>;
 }
 ```
+
+## 3.3 Loading Components
+
+- loading.tsx can substitute component until SSR loading is done
+
+```sh
+touch app/(home)/loading.tsx
+```
