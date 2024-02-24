@@ -320,3 +320,17 @@ styles/movie-videos.module.css
   ));
 }
 ```
+
+## 4.4 Dynamic Metadata
+
+- `generateMetadata` can set dynamic metadata
+- `getMovie` is already cached => good to call again
+
+```ts
+export async function generateMetadata({ params: { id } }: IParams) {
+  const movie = await getMovie(id);
+  return {
+    title: movie.title,
+  };
+}
+```
