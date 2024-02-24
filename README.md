@@ -259,3 +259,29 @@ export default function ErrorOMG() {
   return <h1>lol something broke....</h1>;
 }
 ```
+
+## DEPLOYMENT
+
+# 4.1 CSS Modules
+
+```sh
+mkdir styles
+touch styles/global.css \
+styles/navigation.module.css
+```
+
+- CSS module is out of the box(without any configration)
+- In global.css, it can be any css
+- In {componentName}.module.css, it should start with class name eg) `.nav ul {}`
+  - should end with `module.css`
+  - use with className `<nav className={styles.nav}>`
+
+```ts
+import styles from "../styles/navigation.module.css";
+
+export default function Navigation() {
+  ..
+  return (
+    <nav className={styles.nav}>
+      <ul className={styles.list}>
+```
