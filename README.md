@@ -334,3 +334,17 @@ export async function generateMetadata({ params: { id } }: IParams) {
   };
 }
 ```
+
+# 4.5 Deployment
+
+- move const to out of page to avoid hard refresh
+
+```sh
+touch app/constants.ts
+```
+
+- use prefetch to fetch as soon as Link appear on screen in advance of clicking
+
+```ts
+<Link prefetch href={`/movies/${id}`}>
+```
