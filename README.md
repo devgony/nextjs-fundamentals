@@ -285,3 +285,14 @@ export default function Navigation() {
     <nav className={styles.nav}>
       <ul className={styles.list}>
 ```
+
+## 4.2 Movie Styles
+
+- impl css base
+- merge `styles.list` under `stylye.nav`
+
+```sh
+touch styles/home.module.css \
+styles/movie.module.css \
+components/movie.tsx
+```
