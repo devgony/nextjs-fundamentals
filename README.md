@@ -260,7 +260,7 @@ export default function ErrorOMG() {
 }
 ```
 
-## DEPLOYMENT
+# 4 DEPLOYMENT
 
 # 4.1 CSS Modules
 
@@ -274,6 +274,7 @@ styles/navigation.module.css
 - In global.css, it can be any css
 - In {componentName}.module.css, it should start with class name eg) `.nav ul {}`
   - should end with `module.css`
+  - import with anyname (usually `styles`)
   - use with className `<nav className={styles.nav}>`
 
 ```ts
@@ -295,4 +296,27 @@ export default function Navigation() {
 touch styles/home.module.css \
 styles/movie.module.css \
 components/movie.tsx
+```
+
+## 4.3 Movie Trailers
+
+```sh
+touch styles/movie-info.module.css \
+styles/movie-videos.module.css
+```
+
+- embed video by iframe
+
+```ts
+{
+  videos.map((video) => (
+    <iframe
+      key={video.id}
+      src={`https://youtube.com/embed/${video.key}`}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      title={video.name}
+    />
+  ));
+}
 ```
